@@ -1,6 +1,13 @@
 # Artifactoid
+Artifactoid shows artifact card data within your discord channels.
 
-**Artifactoid** "Artifactoid shows artifact card data within your discord channels.
+#### Usage
+
+To get started type `!a help`.
+
+#### Configuration
+
+Artifactoid has a couple of configuration options which can be viewied and modified by the `!a config` command.
 
 [Official Artifactoid Discord](https://discord.gg/KxNzKFN)
 
