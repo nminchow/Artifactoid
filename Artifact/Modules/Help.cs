@@ -16,7 +16,7 @@ namespace Artifact.Modules
             _database = database;
         }
 
-        [Command("d admin", RunMode = RunMode.Async)]
+        [Command("a config", RunMode = RunMode.Async)]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task AdminHelp()
         {
@@ -25,7 +25,7 @@ namespace Artifact.Modules
             await Context.Channel.SendMessageAsync(view.Item1, embed: view.Item2);
         }
 
-        [Command("d help", RunMode = RunMode.Async)]
+        [Command("a help", RunMode = RunMode.Async)]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task GeneralHelp()
         {

@@ -16,14 +16,14 @@ namespace Artifact.Modules
             _database = database;
         }
 
-        [Command("config match", RunMode = RunMode.Async)]
+        [Command("a config match", RunMode = RunMode.Async)]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task LookupSetting([Remainder] string message)
         {
             await Controllers.Settings.LookupSetting.PerformAsync(Context, message, _database);
         }
 
-        [Command("config display", RunMode = RunMode.Async)]
+        [Command("a config display", RunMode = RunMode.Async)]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task SetDisplay([Remainder] string message)
         {

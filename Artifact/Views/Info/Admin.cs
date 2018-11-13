@@ -21,21 +21,20 @@ namespace Artifact.Views.Info
                 {
                     Name = "Admin Guide"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
                 Description = "These commands are only callable by admin users.\n\n" +
-                "Support Server: https://discord.gg/ \n\n"
+                "Support Server: https://discord.gg/KxNzKFN \n\n"
             };
 
-            embed.AddField("!config match {type}", "Toggle the bot's automatic card name detection between three types:\n" +
+            embed.AddField("!a config match {type}", "Toggle the bot's automatic card name detection between three types:\n" +
                 "**brackets** - Look for card names between brackets: `I'm going to try [[axe]].`\n" +
                 "**all** - Look for card names everywhere in messages: `I'm going to try axe.`\n" +
                 "**none** - Disable automatic card name matching."
                 );
-            embed.AddField("!config display {type}", "Select the display type you would like used when an automatic match is found:\n" +
+            embed.AddField("!a config display {type}", "Select the display type you would like used when an automatic match is found:\n" +
                 "**full** - Display the full card art and the ArtifactFire card link.\n" +
-                "**fire** - Do not display card art, but do display the ArtifactFire card link.\n" +
+                "**fire** - Display mini card art and the ArtifactFire card link.\n" +
                 "**image** - Display the full card art, but do not display the ArtifactFire card link.\n" +
-                "**mini** - Do not display the card art nor the ArtifactFire card link.");
+                "**mini** - Diplay mini card art and do not display the ArtifactFire card link.");
             embed.AddField("Current Settings", $"match: {guild.LookupSetting}\ndisplay: {guild.DisplaySetting}");
 
             return new Tuple<string, Embed>("", embed);

@@ -36,17 +36,16 @@ namespace Artifact.Views.Info
                 {
                     Name = "Guide"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
-                Description = "Discord artifact shows artifact card data within your discord channels.\n\n" +
+                Description = "Artifactoid shows artifact card data within your discord channels.\n\n" +
                 lookupText +
-                "\n\n Support Server: https://discord.gg/ \n\n" +
+                "\n\n Support Server: https://discord.gg/KxNzKFN \n\n" +
                 "**Additional Commands:**",
             };
 
             embed.AddField("!c {card name}", "Perform a lookup by card name." +
                 $"\nex: `!c Axe`");
-            embed.AddField("!d config", "Get a list of admin only configuration commands.");
-            embed.AddField("!d help", "Display this help dialogue.");
+            embed.AddField("!a config", "Get a list of admin only configuration commands.");
+            embed.AddField("!a help", "Display this help dialogue.");
 
             return new Tuple<string, Embed>("", embed);
         }

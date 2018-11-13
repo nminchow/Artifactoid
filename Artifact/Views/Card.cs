@@ -31,13 +31,22 @@ namespace Artifact.Views
                 color = new Color(220, 175, 78);
             }
 
+
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            // remove special characters
+            var str = rgx.Replace(card.card_name.english, "");
+            // replace space with dash and create link
+            var artifactFireLink = $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
+
             var embed = new EmbedBuilder
             {
                 Author = new EmbedAuthorBuilder
                 {
-                    Name = card.card_name.english
+                    Name = card.card_name.english,
+                    Url = artifactFireLink,
+                    IconUrl = card.mini_image.def
                 },
-                ThumbnailUrl = card.mini_image.def,
+                //ThumbnailUrl = card.large_image.def,
                 Color = color,
                 Description = Regex.Replace(card.card_text.english ?? "-", "<.*?>", string.Empty)
             };
@@ -45,21 +54,18 @@ namespace Artifact.Views
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.image }.Contains(display))
             {
                 embed.ImageUrl = card.large_image.def;
+            } else
+            {
+                embed.ThumbnailUrl = card.large_image.def;
             }
 
-
-            var artifactFireLink = "";
+            var lastField = card.rarity;
 
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.fire }.Contains(display))
             {
-                Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-                // remove special characters
-                var str = rgx.Replace(card.card_name.english, "");
-                // replace space with dash and create link
-                artifactFireLink = $"\n[ArtifactFire](https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')})";
+                lastField += $"\n[ArtifactFire]({artifactFireLink})";
             }
 
-            var lastField = $"{card.rarity}{artifactFireLink}";
 
             switch (card.card_type)
             {
