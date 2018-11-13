@@ -19,6 +19,23 @@ Artifactoid has a couple of configuration options which can be viewied and modif
 
 Pull requests are welcome!
 
+To get running locally:
+1. Create a [discord bot user](https://discordapp.com/developers/applications/)
+2. Set up a sql database
+3. create a appsettings.json file within the project's "Artifact" directory (see example below)
+4. Run migrations
+5. Be excellent to eachother
+
+```json
+// appsettings.json
+{
+  "discordAppToken": "F5OCongcjYOMXmEgrTmGDFy1Te5CUZy5ignm2DLoUUwJ1QsbfqEeOpyWBhe",
+  "ConnectionStrings": {
+    "sql": "Server=(localdb)\\mssqllocaldb;Database=Artifact;Trusted_Connection=True;"
+  }
+}
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
