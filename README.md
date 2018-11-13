@@ -22,7 +22,7 @@ Pull requests are welcome!
 To get running locally:
 1. Create a [discord bot user](https://discordapp.com/developers/applications/)
 2. Set up a sql database
-3. create a appsettings.json file within the project's "Artifact" directory (see example below)
+3. Create a appsettings.json file within the project's "Artifact" directory (see example below)
 4. Run migrations
 5. Be excellent to eachother
 
