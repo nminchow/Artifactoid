@@ -13,7 +13,7 @@ namespace Artifact.Models
         public int ID { get; set; }
         public string DiscordId { get; set; }
         public LookupSetting LookupSetting { get; set; } = LookupSetting.brackets;
-        public DisplaySettings DisplaySetting { get; set; } = DisplaySettings.full;
+        public DisplaySettings DisplaySetting { get; set; } = DisplaySettings.fire;
     }
 }
 

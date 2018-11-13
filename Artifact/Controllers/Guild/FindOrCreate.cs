@@ -15,6 +15,7 @@ namespace Artifact.Controllers.Guild
             {
                 dbGuild = new Models.Guild { DiscordId = guild.Id.ToString() };
                 db.Guilds.Add(dbGuild);
+                db.SaveChanges();
             }
             return dbGuild;
         }

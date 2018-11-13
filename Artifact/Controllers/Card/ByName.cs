@@ -19,7 +19,7 @@ namespace Artifact.Controllers.Card
 
         public static IEnumerable<Models.Card> CardsByName(string name)
         {
-            return LoadCards.Instance.cards.Where(x => x.card_name.english == name);
+            return LoadCards.Instance.cards.Where(x => x.card_name.english.ToLower() == name.ToLower());
         }
     }
 }

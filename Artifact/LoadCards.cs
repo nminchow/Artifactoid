@@ -25,7 +25,7 @@ namespace Artifact
             sets = new Card_Set[2];
             for (int i = 0; i < sets.Length; i++)
             {
-                var path = $"{Directory.GetCurrentDirectory()}\\RawSets\\set_{i}.json";
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "RawSets", $"set_{i}.json");
                 using (StreamReader file = File.OpenText(path))
                 {
                     JsonSerializer serializer = new JsonSerializer();

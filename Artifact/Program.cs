@@ -29,7 +29,7 @@ namespace Artifact
 
             _client = new DiscordSocketClient();
             _client.Log += Log;
-            //_client.JoinedGuild += Controllers.Helpers.JoinedGuild.Joined(db, configuration["discordBotListToken"]);
+            _client.JoinedGuild += Controllers.JoinedGuild.Joined(db);
             // disable joined message for now
             //_client.UserJoined += Controllers.Helpers.UserJoined.SendJoinedMessage;
 
@@ -103,8 +103,6 @@ namespace Artifact
         private async Task SendCommandAsync(SocketCommandContext context, int argPos)
         {
             var result = await _commands.ExecuteAsync(context, argPos, _services);
-            if (!result.IsSuccess)
-                await context.Channel.SendMessageAsync(result.ErrorReason);
         }
 
         private Task Log(LogMessage msg)
