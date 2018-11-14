@@ -44,7 +44,7 @@ namespace Artifact.Views
             {
                 var reference = card.references.First(x => x.ref_type == "passive_ability");
                 var supplemental_card = Controllers.Card.Helpers.FindById.Perform(reference.card_id);
-                description = $"**{supplemental_card.card_name.english}**: {supplemental_card.card_text.english}";
+                description = $"{supplemental_card.card_name.english}\n {supplemental_card.card_text.english}";
             }
 
             var embed = new EmbedBuilder
