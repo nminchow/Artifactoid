@@ -10,6 +10,13 @@ namespace Artifact.Views
 {
     class Card
     {
+        private static string GenerateLink(Models.Card card)
+        {
+            var str = new Regex("[^a-zA-Z0-9 -]").Replace(card.card_name.english, "");
+            // replace space with dash and create link
+            return $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
+        }
+
         public static Tuple<string, Embed> Response(Models.Card card, Models.DisplaySettings display)
         {
             // Color (default black)
@@ -38,14 +45,24 @@ namespace Artifact.Views
             // replace space with dash and create link
             var artifactFireLink = $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
 
+            artifactFireLink = GenerateLink(card);
+
             var description = card.card_text.english;
 
             if (string.IsNullOrEmpty(description) && card.references.Any(x => x.ref_type == "passive_ability"))
             {
                 var reference = card.references.First(x => x.ref_type == "passive_ability");
                 var supplemental_card = Controllers.Card.Helpers.FindById.Perform(reference.card_id);
-                description = $"{supplemental_card.card_name.english}\n {supplemental_card.card_text.english}";
+                description = $"{supplemental_card.card_name.english}\n{supplemental_card.card_text.english}";
             }
+
+            description = description ?? "-";
+
+            card.references.Where(x => x.ref_type == "includes").Select(x =>
+                Controllers.Card.Helpers.FindById.Perform(x.card_id)
+            ).ToList().ForEach(x =>
+                description += $"\n\n**[{x.card_name.english}]({GenerateLink(x)})**: {x.card_text.english}"
+            );
 
             var embed = new EmbedBuilder
             {
@@ -57,7 +74,7 @@ namespace Artifact.Views
                 },
                 //ThumbnailUrl = card.large_image.def,
                 Color = color,
-                Description = Regex.Replace(description ?? "-", "<.*?>", string.Empty)
+                Description = Regex.Replace(description, "<.*?>", string.Empty)
             };
 
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.image }.Contains(display))
