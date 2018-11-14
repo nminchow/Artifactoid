@@ -38,6 +38,15 @@ namespace Artifact.Views
             // replace space with dash and create link
             var artifactFireLink = $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
 
+            var description = card.card_text.english;
+
+            if (string.IsNullOrEmpty(description) && card.references.Any(x => x.ref_type == "passive_ability"))
+            {
+                var reference = card.references.First(x => x.ref_type == "passive_ability");
+                var supplemental_card = Controllers.Card.Helpers.FindById.Perform(reference.card_id);
+                description = $"**{supplemental_card.card_name.english}**: {supplemental_card.card_text.english}";
+            }
+
             var embed = new EmbedBuilder
             {
                 Author = new EmbedAuthorBuilder
@@ -48,7 +57,7 @@ namespace Artifact.Views
                 },
                 //ThumbnailUrl = card.large_image.def,
                 Color = color,
-                Description = Regex.Replace(card.card_text.english ?? "-", "<.*?>", string.Empty)
+                Description = Regex.Replace(description ?? "-", "<.*?>", string.Empty)
             };
 
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.image }.Contains(display))
