@@ -1,5 +1,5 @@
 # Artifactoid
-Artifactoid shows artifact card data within your discord channels.
+Artifactoid shows artifact card data within your discord channels. [Invite link](https://discordapp.com/oauth2/authorize?client_id=511716826884079617&scope=bot)
 
 #### Usage
 
