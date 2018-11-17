@@ -10,16 +10,17 @@ namespace Artifact.Controllers.Card
 {
     class ByName
     {
-        public static async Task PerformAsync(SocketCommandContext context, string name)
+        public static async Task PerformAsync(SocketCommandContext context, string name, DataBase db)
         {
-            IEnumerable<Models.Card> hits = CardsByName(name);
-            await Helpers.SendCards.PerformAsync(context, hits, DisplaySettings.full);
+            var guild = Guild.FindOrCreate.Perform(context.Guild, db);
+            IEnumerable<Models.Card> hits = CardsByName(name, guild.Language);
+            await Helpers.SendCards.PerformAsync(context, hits, DisplaySettings.full, guild.Language);
             return;
         }
 
-        public static IEnumerable<Models.Card> CardsByName(string name)
+        public static IEnumerable<Models.Card> CardsByName(string name, Languages language)
         {
-            return LoadCards.Instance.cards.Where(x => x.card_name.english.ToLower() == name.ToLower());
+            return LoadCards.Instance.cards.Where(x => x.card_name.InLanguage(language).ToLower() == name.ToLower());
         }
     }
 }

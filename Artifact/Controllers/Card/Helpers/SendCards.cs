@@ -9,9 +9,9 @@ namespace Artifact.Controllers.Card.Helpers
 {
     class SendCards
     {
-        public static async Task PerformAsync(SocketCommandContext context, IEnumerable<Models.Card> cards, Models.DisplaySettings display)
+        public static async Task PerformAsync(SocketCommandContext context, IEnumerable<Models.Card> cards, Models.DisplaySettings display, Models.Languages language)
         {
-            var cardViews = cards.Select(x => Views.Card.Response(x, display));
+            var cardViews = cards.Select(x => Views.Card.Response(x, display, language));
 
             var messages = cardViews.Select(x =>
                 SendCardAndReactions(x.Item2, x.Item1, context)

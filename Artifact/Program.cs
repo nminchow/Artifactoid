@@ -83,7 +83,7 @@ namespace Artifact
                         return;
                     }
 
-                    await Controllers.Card.SendReactionCard.PerformAsync(channel, message, candidate);
+                    await Controllers.Card.SendReactionCard.PerformAsync(channel, message, candidate, _services.GetRequiredService<DataBase>());
                 }
                 
             } catch (Exception e)

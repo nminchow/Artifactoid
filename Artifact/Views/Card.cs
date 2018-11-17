@@ -44,7 +44,7 @@ namespace Artifact.Views
             new Emoji("▪️")
         };
 
-        public static Tuple<Embed, List<Emoji>> Response(Models.Card card, Models.DisplaySettings display, LinkTypes linkType = LinkTypes.articraft)
+        public static Tuple<Embed, List<Emoji>> Response(Models.Card card, DisplaySettings display, Languages language, LinkTypes linkType = LinkTypes.articraft)
         {
 
             // Color (default black)
@@ -68,14 +68,14 @@ namespace Artifact.Views
 
             var webLink = GenerateLink(card, linkType);
 
-            var description = card.card_text.english;
+            var description = card.card_text.InLanguage(language);
 
 
             if (string.IsNullOrEmpty(description) && card.references.Any(x => x.ref_type == "passive_ability"))
             {
                 var reference = card.references.First(x => x.ref_type == "passive_ability");
                 var supplemental_card = Controllers.Card.Helpers.FindById.Perform(reference.card_id);
-                description = $"{supplemental_card.card_name.english}\n{supplemental_card.card_text.english}";
+                description = $"{supplemental_card.card_name.InLanguage(language)}\n{supplemental_card.card_text.InLanguage(language)}";
             }
 
             description = description ?? "-";
@@ -86,14 +86,14 @@ namespace Artifact.Views
             foreach (Models.Card x in associatedCards)
             {
                 usedLabels.Add(labels.Peek());
-                description += $"\n\n**{labels.Dequeue()}[{x.card_name.english}]({GenerateLink(x, linkType)})**: {x.card_text.english}";
+                description += $"\n\n**{labels.Dequeue()}[{x.card_name.InLanguage(language)}]({GenerateLink(x, linkType)})**: {x.card_text.InLanguage(language)}";
             }
 
             var embed = new EmbedBuilder
             {
                 Author = new EmbedAuthorBuilder
                 {
-                    Name = card.card_name.english,
+                    Name = card.card_name.InLanguage(language),
                     Url = webLink,
                     IconUrl = card.mini_image.def
                 },
@@ -104,20 +104,19 @@ namespace Artifact.Views
 
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.image }.Contains(display))
             {
-                embed.ImageUrl = card.large_image.def;
+                embed.ImageUrl = card.large_image.InLanguage(language);
             }
             else
             {
-                embed.ThumbnailUrl = card.large_image.def;
+                embed.ThumbnailUrl = card.large_image.InLanguage(language);
             }
 
-            var lastField = card.rarity;
+            var lastField = card.rarity ?? "No Rarity";
 
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.link }.Contains(display))
             {
                 lastField += $"\n[{LinkName(linkType)}]({webLink})";
             }
-
 
             switch (card.card_type)
             {

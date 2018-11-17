@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Artifact.Models.CardInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,9 +25,41 @@ namespace Artifact.Models
         public Name name { get; set; }
     }
 
-    public class Name
+    public class Name : ILanguageable
     {
         public string english { get; set; }
+        public string german { get; set; }
+        public string french { get; set; }
+        public string italian { get; set; }
+        public string koreana { get; set; }
+        public string spanish { get; set; }
+        public string schinese { get; set; }
+        public string tchinese { get; set; }
+        public string russian { get; set; }
+        public string thai { get; set; }
+        public string japanese { get; set; }
+        public string portuguese { get; set; }
+        public string polish { get; set; }
+        public string danish { get; set; }
+        public string dutch { get; set; }
+        public string finnish { get; set; }
+        public string norwegian { get; set; }
+        public string swedish { get; set; }
+        public string hungarian { get; set; }
+        public string czech { get; set; }
+        public string romanian { get; set; }
+        public string turkish { get; set; }
+        public string brazilian { get; set; }
+        public string bulgarian { get; set; }
+        public string greek { get; set; }
+        public string ukrainian { get; set; }
+        public string latam { get; set; }
+        public string vietnamese { get; set; }
+
+        public string InLanguage(Languages language)
+        {
+            return Methods.InLanguage(language, this);
+        }
     }
 
     public class Card
@@ -54,14 +87,78 @@ namespace Artifact.Models
         public bool is_blue { get; set; }
     }
 
-    public class Card_Name
+    public class Card_Name : ILanguageable
     {
         public string english { get; set; }
+        public string german { get; set; }
+        public string french { get; set; }
+        public string italian { get; set; }
+        public string koreana { get; set; }
+        public string spanish { get; set; }
+        public string schinese { get; set; }
+        public string tchinese { get; set; }
+        public string russian { get; set; }
+        public string thai { get; set; }
+        public string japanese { get; set; }
+        public string portuguese { get; set; }
+        public string polish { get; set; }
+        public string danish { get; set; }
+        public string dutch { get; set; }
+        public string finnish { get; set; }
+        public string norwegian { get; set; }
+        public string swedish { get; set; }
+        public string hungarian { get; set; }
+        public string czech { get; set; }
+        public string romanian { get; set; }
+        public string turkish { get; set; }
+        public string brazilian { get; set; }
+        public string bulgarian { get; set; }
+        public string greek { get; set; }
+        public string ukrainian { get; set; }
+        public string latam { get; set; }
+        public string vietnamese { get; set; }
+
+        public string InLanguage(Languages language)
+        {
+            return Methods.InLanguage(language, this);
+        }
     }
 
-    public class Card_Text
+    public class Card_Text : ILanguageable
     {
         public string english { get; set; }
+        public string german { get; set; }
+        public string french { get; set; }
+        public string italian { get; set; }
+        public string koreana { get; set; }
+        public string spanish { get; set; }
+        public string schinese { get; set; }
+        public string tchinese { get; set; }
+        public string russian { get; set; }
+        public string thai { get; set; }
+        public string japanese { get; set; }
+        public string portuguese { get; set; }
+        public string polish { get; set; }
+        public string danish { get; set; }
+        public string dutch { get; set; }
+        public string finnish { get; set; }
+        public string norwegian { get; set; }
+        public string swedish { get; set; }
+        public string hungarian { get; set; }
+        public string czech { get; set; }
+        public string romanian { get; set; }
+        public string turkish { get; set; }
+        public string brazilian { get; set; }
+        public string bulgarian { get; set; }
+        public string greek { get; set; }
+        public string ukrainian { get; set; }
+        public string latam { get; set; }
+        public string vietnamese { get; set; }
+
+        public string InLanguage(Languages language)
+        {
+            return Methods.InLanguage(language, this);
+        }
     }
 
     public class Mini_Image
@@ -69,9 +166,42 @@ namespace Artifact.Models
         public string def { get; set; }
     }
 
-    public class Large_Image
+    public class Large_Image : ILanguageable
     {
         public string def { get; set; }
+        public string german { get; set; }
+        public string french { get; set; }
+        public string italian { get; set; }
+        public string koreana { get; set; }
+        public string spanish { get; set; }
+        public string schinese { get; set; }
+        public string tchinese { get; set; }
+        public string russian { get; set; }
+        public string japanese { get; set; }
+        public string brazilian { get; set; }
+        public string latam { get; set; }
+        public string english { get => def; set { } }
+        public string thai { get => def; set { } }
+        public string portuguese { get => def; set { } }
+        public string polish { get => def; set { } }
+        public string danish { get => def; set { } }
+        public string dutch { get => def; set { } }
+        public string finnish { get => def; set { } }
+        public string norwegian { get => def; set { } }
+        public string swedish { get => def; set { } }
+        public string hungarian { get => def; set { } }
+        public string czech { get => def; set { } }
+        public string romanian { get => def; set { } }
+        public string turkish { get => def; set { } }
+        public string bulgarian { get => def; set { } }
+        public string greek { get => def; set { } }
+        public string ukrainian { get => def; set { } }
+        public string vietnamese { get => def; set { } }
+
+        public string InLanguage(Languages language)
+        {
+            return Methods.InLanguage(language, this);
+        }
     }
 
     public class Ingame_Image

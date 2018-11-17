@@ -13,7 +13,7 @@ namespace Artifact.Controllers.Card
     {
         public static async Task PerformAsync(SocketCommandContext context, DataBase db)
         {
-            var regex = new Regex(@"[^a-zA-Z0-9\[\] ]");
+            var regex = new Regex(@"[^\p{L}\[\] ]");
             var guild = Guild.FindOrCreate.Perform(context.Guild, db);
             var message = regex.Replace(context.Message.Content.ToLower(), "");
             var hits = new List<Models.Card>();
@@ -23,14 +23,14 @@ namespace Artifact.Controllers.Card
                 case LookupSetting.none:
                     break;
                 case LookupSetting.all:
-                    hits = LoadCards.Instance.cards.Where(x => message.Contains(replace(regex, x))).ToList();
+                    hits = LoadCards.Instance.cards.Where(x => message.Contains(replace(regex, x, guild.Language))).ToList();
                     break;
                 case LookupSetting.brackets:
                     // this could be cleaner with some substring logic
-                    hits = LoadCards.Instance.cards.Where(x => message.Contains($"[[{replace(regex, x)}]]")).ToList();
+                    hits = LoadCards.Instance.cards.Where(x => message.Contains($"[[{replace(regex, x, guild.Language)}]]")).ToList();
                     break;
             }
-            await Helpers.SendCards.PerformAsync(context, hits, guild.DisplaySetting);
+            await Helpers.SendCards.PerformAsync(context, hits, guild.DisplaySetting, guild.Language);
 
             await DeckLinks.PerformAsync(context, db);
 
@@ -38,9 +38,9 @@ namespace Artifact.Controllers.Card
 
         }
 
-        public static string replace(Regex regex, Models.Card card)
+        public static string replace(Regex regex, Models.Card card, Languages language)
         {
-            return regex.Replace(card.card_name.english.ToLower(), "");
+            return regex.Replace(card.card_name.InLanguage(language).ToLower(), "");
         }
     }
 }

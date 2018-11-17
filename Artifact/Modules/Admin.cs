@@ -29,5 +29,19 @@ namespace Artifact.Modules
         {
             await Controllers.Settings.DisplaySetting.PerformAsync(Context, message, _database);
         }
+
+        [Command("a config language", RunMode = RunMode.Async)]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        public async Task SetLanguage([Remainder] string message)
+        {
+            await Controllers.Settings.LanguageSetting.PerformAsync(Context, message, _database);
+        }
+
+        [Command("a config language", RunMode = RunMode.Async)]
+        [RequireUserPermission(GuildPermission.Administrator)]
+        public async Task ListLanguages()
+        {
+            await Controllers.Settings.LanguageList.PerformAsync(Context);
+        }
     }
 }

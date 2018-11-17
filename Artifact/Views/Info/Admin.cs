@@ -35,7 +35,11 @@ namespace Artifact.Views.Info
                 "**link** - Display mini card art and the card link.\n" +
                 "**image** - Display the full card art, but do not display the card link.\n" +
                 "**mini** - Diplay mini card art and do not display the card link.");
-            embed.AddField("Current Settings", $"match: {guild.LookupSetting}\ndisplay: {guild.DisplaySetting}");
+            embed.AddField("!a config language {type}", "Select the language used for matching and display cards.\n" +
+                "(use `!a config language` for a list - note that not all languages are fully supported)");
+            embed.AddField("Current Settings", $"match: {guild.LookupSetting}\n" +
+                $"display: {guild.DisplaySetting}\n" +
+                $"language: {guild.Language}");
 
             return new Tuple<string, Embed>("", embed);
         }
