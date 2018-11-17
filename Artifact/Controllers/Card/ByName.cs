@@ -14,7 +14,7 @@ namespace Artifact.Controllers.Card
         {
             var guild = Guild.FindOrCreate.Perform(context.Guild, db);
             IEnumerable<Models.Card> hits = CardsByName(name, guild.Language);
-            await Helpers.SendCards.PerformAsync(context, hits, DisplaySettings.full, guild.Language);
+            await Helpers.SendCards.PerformAsync(context, hits, guild.DisplaySetting, guild.Language);
             return;
         }
 
