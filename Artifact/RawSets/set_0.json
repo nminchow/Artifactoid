@@ -430,10 +430,10 @@
 "base_card_id":4000,
 "card_type":"Hero",
 "card_name":{
-"english":"Fahrvhan the Dreamer"
+"english":"Farvhan the Dreamer"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Pack Leadership</span><br/>Farvhan the Dreamer's allied neighbors have +1 Armor."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4000.049cff338ab7274d0dcde4d4e3ec5bc5bcdd2a8e.png"
@@ -469,7 +469,7 @@
 "english":"Pack Leadership"
 },
 "card_text":{
-"english":"Fahrvhan the Dreamer's allied neighbors have +1 Armor."
+"english":"Farvhan the Dreamer's allied neighbors have +1 Armor."
 },
 "mini_image":{
 
@@ -581,7 +581,7 @@
 "english":"Debbi the Cunning"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Meticulous Planner</span><br/>Debbi the Cunning deals +2 damage when attacking a hero or tower."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4005.ceab77c296987994f9dfbc5f27bfcbb3fefde14a.png"
@@ -614,7 +614,7 @@
 "base_card_id":4006,
 "card_type":"Passive Ability",
 "card_name":{
-"english":"Work the Knife"
+"english":"Meticulous Planner"
 },
 "card_text":{
 "english":"Debbi the Cunning deals +2 damage when attacking a hero or tower."
@@ -668,14 +668,14 @@
 "english":"J'Muy the Wise"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Draw a card."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Wisdom of the Elders</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Draw a card."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4008.35f4da08e371db6ecc077f4aad08113dac8cc4de.png"
 },
-"large_image":{
-"def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4008_large_english.2f24843475c7fd6373037e7d32c75779ae40f3de.png"
-},
+  "large_image": {
+    "def": "https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4008_large_english.2f24843475c7fd6373037e7d32c75779ae40f3de.png"
+  },
 "ingame_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set00/4008_ingame.094a2c09317b5d7b0dbce840c3384811912e0e06.png"
 },

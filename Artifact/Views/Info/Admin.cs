@@ -31,10 +31,10 @@ namespace Artifact.Views.Info
                 "**none** - Disable automatic card name matching."
                 );
             embed.AddField("!a config display {type}", "Select the display type you would like used when an automatic match is found:\n" +
-                "**full** - Display the full card art and the ArtifactFire card link.\n" +
-                "**fire** - Display mini card art and the ArtifactFire card link.\n" +
-                "**image** - Display the full card art, but do not display the ArtifactFire card link.\n" +
-                "**mini** - Diplay mini card art and do not display the ArtifactFire card link.");
+                "**full** - Display the full card art and the card link.\n" +
+                "**link** - Display mini card art and the card link.\n" +
+                "**image** - Display the full card art, but do not display the card link.\n" +
+                "**mini** - Diplay mini card art and do not display the card link.");
             embed.AddField("Current Settings", $"match: {guild.LookupSetting}\ndisplay: {guild.DisplaySetting}");
 
             return new Tuple<string, Embed>("", embed);

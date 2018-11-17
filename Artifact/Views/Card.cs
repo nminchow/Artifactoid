@@ -5,49 +5,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Artifact.Models;
 
 namespace Artifact.Views
 {
     class Card
     {
-        private static string GenerateLink(Models.Card card)
+        private static string GenerateLink(Models.Card card, LinkTypes linkType)
         {
             var str = new Regex("[^a-zA-Z0-9 -]").Replace(card.card_name.english, "");
-            // replace space with dash and create link
-            return $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
+            switch (linkType)
+            {
+                case LinkTypes.artifactFire:
+                    return $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
+                case LinkTypes.articraft:
+                    return $"https://articraft.io/cards/view/{str.Replace(" ", "")}";
+            }
+            return "https://playartifact.com/";
         }
 
-        public static Tuple<string, Embed> Response(Models.Card card, Models.DisplaySettings display)
+        public static string LinkName(LinkTypes linkType)
         {
+            switch (linkType)
+            {
+                case LinkTypes.artifactFire:
+                    return "ArtifactFire";
+                case LinkTypes.articraft:
+                    return "ARTICRAFT";
+            }
+            return "";
+        }
+
+        public static List<Emoji> Labels = new List<Emoji>
+        {
+            new Emoji("🔹"),
+            new Emoji("🔸"),
+            new Emoji("▫️"),
+            new Emoji("▪️")
+        };
+
+        public static Tuple<Embed, List<Emoji>> Response(Models.Card card, Models.DisplaySettings display, LinkTypes linkType = LinkTypes.articraft)
+        {
+
             // Color (default black)
             var color = new Color(115, 110, 128);
-            if(card.is_blue)
+            if (card.is_blue)
             {
                 color = new Color(47, 116, 146);
             }
-            else if(card.is_green)
+            else if (card.is_green)
             {
                 color = new Color(71, 144, 54);
             }
-            else if(card.is_red)
+            else if (card.is_red)
             {
                 color = new Color(194, 53, 45);
             }
-            else if(card.card_type == "Item")
+            else if (card.card_type == "Item")
             {
                 color = new Color(220, 175, 78);
             }
 
-
-            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-            // remove special characters
-            var str = rgx.Replace(card.card_name.english, "");
-            // replace space with dash and create link
-            var artifactFireLink = $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
-
-            artifactFireLink = GenerateLink(card);
+            var webLink = GenerateLink(card, linkType);
 
             var description = card.card_text.english;
+
 
             if (string.IsNullOrEmpty(description) && card.references.Any(x => x.ref_type == "passive_ability"))
             {
@@ -57,19 +79,22 @@ namespace Artifact.Views
             }
 
             description = description ?? "-";
+            List<Models.Card> associatedCards = GetAssociatedCards(card);
 
-            card.references.Where(x => x.ref_type == "includes").Select(x =>
-                Controllers.Card.Helpers.FindById.Perform(x.card_id)
-            ).ToList().ForEach(x =>
-                description += $"\n\n**[{x.card_name.english}]({GenerateLink(x)})**: {x.card_text.english}"
-            );
+            var labels = new Queue<Emoji>(Labels);
+            var usedLabels = new List<Emoji>();
+            foreach (Models.Card x in associatedCards)
+            {
+                usedLabels.Add(labels.Peek());
+                description += $"\n\n**{labels.Dequeue()}[{x.card_name.english}]({GenerateLink(x, linkType)})**: {x.card_text.english}";
+            }
 
             var embed = new EmbedBuilder
             {
                 Author = new EmbedAuthorBuilder
                 {
                     Name = card.card_name.english,
-                    Url = artifactFireLink,
+                    Url = webLink,
                     IconUrl = card.mini_image.def
                 },
                 //ThumbnailUrl = card.large_image.def,
@@ -80,16 +105,17 @@ namespace Artifact.Views
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.image }.Contains(display))
             {
                 embed.ImageUrl = card.large_image.def;
-            } else
+            }
+            else
             {
                 embed.ThumbnailUrl = card.large_image.def;
             }
 
             var lastField = card.rarity;
 
-            if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.fire }.Contains(display))
+            if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.link }.Contains(display))
             {
-                lastField += $"\n[ArtifactFire]({artifactFireLink})";
+                lastField += $"\n[{LinkName(linkType)}]({webLink})";
             }
 
 
@@ -111,7 +137,14 @@ namespace Artifact.Views
                     break;
             }
 
-            return new Tuple<string, Embed>("", embed);
+            return new Tuple<Embed, List<Emoji>>(embed, usedLabels);
+        }
+
+        public static List<Models.Card> GetAssociatedCards(Models.Card card)
+        {
+            return card.references.Where(x => x.ref_type == "includes").Select(x =>
+                            Controllers.Card.Helpers.FindById.Perform(x.card_id)
+                        ).ToList();
         }
     }
 }

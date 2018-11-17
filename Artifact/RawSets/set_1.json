@@ -17,7 +17,7 @@
 "english":"Venomancer"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Venomous Nature</span><br/>Summon a <span style='font-weight:bold;color:#ffffff;'>Plague Ward</span> into Venomancer's lane each deployment phase."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10001.c2456641c9dd1b758dd7a0caf5e2a56f727a51f8.png"
@@ -141,7 +141,7 @@
 "english":"Meepo"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move Meepo to an allied <span style='font-weight:bold;color:#ffffff;'>Meepo</span>'s lane.  Deal 2 damage to the new enemy neighbors."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Poof</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move Meepo to an allied <span style='font-weight:bold;color:#ffffff;'>Meepo</span>'s lane.  Deal 2 damage to the new enemy neighbors.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>United We Fall</span><br/>Meepo has Soulbound. (If Meepo dies, other allied Meepos in every lane also die.)"
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10004.8e77e6463c971dab1fa01b3761808eb2cf5163b0.png"
@@ -194,6 +194,7 @@
 "ingame_image":{
 
 },
+"is_crosslane":true,
 "references":[
 {
 "card_id":10004,
@@ -264,7 +265,7 @@
 "english":"Luna"
 },
 "card_text":{
-"english":"Lucent Beam<BR>\nBefore the action phase, deal 1 piercing damage to a random enemy and add a charge to each <span style='font-weight:bold;color:#ffffff;'>Eclipse</span> card in your hand or deck."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Lucent Beam</span><br/>Before the action phase, deal 1 piercing damage to a random enemy and add a charge to three random <span style='font-weight:bold;color:#ffffff;'>Eclipse</span> cards in your hand or deck."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10006.ee9329205440996f09bdcc600c6aaeaa8440c44b.png"
@@ -343,6 +344,7 @@
 "illustrator":"Anthony Palumbo",
 "is_blue":true,
 "mana_cost":6,
+"charges":1,
 "references":[
 
 ]
@@ -356,7 +358,7 @@
 "english":"Winter Wyvern"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move Winter Wyvern to an empty combat position and give it +4 Attack this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Arctic Burn</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move Winter Wyvern to an empty combat position and give it +4 Attack this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10010.ad0a64e7f9814fc0cb1c7e2aa4b217e549239bb6.png"
@@ -445,7 +447,7 @@
 "english":"Lycan"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Feral Impulse</span><br/>Lycan's allied neighbors have +2 Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10014.d0b682f37b2b7b777078f811bdf93a6fa5231ac5.png"
@@ -507,7 +509,7 @@
 "english":"Abaddon"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Fully heal Abaddon and give it Damage Immunity this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Borrowed Time</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Fully heal Abaddon and give it Damage Immunity this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10016.49550e3b17ccf2611eb71b22f58664ae338be8ae.png"
@@ -569,7 +571,7 @@
 "english":"Chen"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Get control of an enemy creep."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Holy Persuasion</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Get control of an enemy creep."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10017.c755182fd873b5df7f4d9bf6075dc1065021b560.png"
@@ -631,7 +633,7 @@
 "english":"Bloodseeker"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Blood Bath</span><br/>Fully heal Bloodseeker after a unit blocking it dies."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10018.99a88322fecd54fc5fe195cd8a12f49bc64e424c.png"
@@ -728,7 +730,7 @@
 "english":"Centaur Warrunner"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Return</span><br/>Centaur Warrunner has +2 Retaliate."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10021.f655334174b3964b58604e3cfa80360e06d83004.png"
@@ -790,7 +792,7 @@
 "english":"Timbersaw"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Reactive Armor</span><br/>Timbersaw has +1 Armor for each of its attackers."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10022.065c0b1ce65b1f201bca225121177c2d19df2c89.png"
@@ -852,7 +854,7 @@
 "english":"Bounty Hunter"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Jinada</span><br/>Before the action phase, there is a 50% chance to give Bounty Hunter +4 Attack this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10023.503fcb60e0cdc30aa1d5a6f858a4050e3315b5f0.png"
@@ -914,7 +916,7 @@
 "english":"Tidehunter"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Stun Tidehunter's enemy neighbors this round and each other enemy has a 50% chance of being stunned this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Ravage</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Stun Tidehunter's enemy neighbors this round and each other enemy has a 50% chance of being stunned this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10024.1ffefd6bce93c5753f51eefdd39e1089b810b08b.png"
@@ -977,7 +979,7 @@
 "english":"Tinker"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Deal 3 damage to a unit and disarm it this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Laser</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Deal 3 damage to a unit and disarm it this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10025.33033b1e8b19d9a934322355077aef6467115d73.png"
@@ -1039,7 +1041,7 @@
 "english":"Rix"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Relentless Rebel</span><br/>Rix has Rapid Deployment."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10026.59c2df4317db54a08c492c3d78f23ed9206a2a17.png"
@@ -1101,7 +1103,7 @@
 "english":"Viper"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Corrosive Skin</span><br/>When a unit deals battle damage to Viper, modify that unit with -1 Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10028.50b8bc7588cab219f86ac87014b2c394d0ee5754.png"
@@ -1163,7 +1165,7 @@
 "english":"Beastmaster"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Loyal Beast</span>."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Call of the Wild</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Loyal Beast</span>."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10029.9deae28f2a6715b2456e5844e2fdea7aaa28418f.png"
@@ -1228,7 +1230,7 @@
 "english":"Bristleback"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Barroom Brawler</span><br/>Modify Bristleback with +2 Armor after a hero blocking it dies."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10030.d6427ab9016cda608a66759ed0b5e8a51a532d0f.png"
@@ -1290,7 +1292,7 @@
 "english":"Kanna"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Bringer of Conquest</span><br/>The random allied <span style='font-weight:bold;color:#ffffff;'>Melee Creeps</span> are deployed into Kanna's lane."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10031.967b53755c3a477cc89b05422018a06d08e837f2.png"
@@ -1355,7 +1357,7 @@
 "english":"Drow Ranger"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Precision Aura</span><br/>Other allies in all lanes have +1 Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10032.ac3532fc6482ff603748ddde2fb3564273a3b72e.png"
@@ -1417,7 +1419,7 @@
 "english":"Earthshaker"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Stun Earthshaker's enemy neighbors this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Fissure</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Stun Earthshaker's enemy neighbors this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10033.7c8e9fa3eccd923d8433ed2b98aef717766ca0d9.png"
@@ -1479,7 +1481,7 @@
 "english":"Enchantress"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Nature's Attendants</span><br/>Enchantress has +2 Regeneration. Enchantress's allied neighbors have +2 Regeneration."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10036.995dc56212e8e8bf40471d3121262d43a82e7c31.png"
@@ -1541,7 +1543,7 @@
 "english":"Lich"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Condemn another ally and draw a card. If that ally has 6 or more Attack, draw an extra card."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Sacrifice</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Condemn another ally and draw a card. If that ally has 6 or more Attack, draw an extra card."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10038.26778b9a203a57b0d3ffb1bc75b7a0734e88c6c8.png"
@@ -1603,7 +1605,7 @@
 "english":"Ogre Magi"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Multicast</span><br/>After you play a <span style='font-weight:bold;color:#2f7492;'>blue spell</span>, there is a 25% chance to put a base copy of that card into your hand."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10043.4b52a60db821028ba02a7fb728988bec2842397f.png"
@@ -1665,7 +1667,7 @@
 "english":"Omniknight"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Heal a unit 3."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Purification</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Heal a unit 3."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10044.5fe4f8195b2a005f6b40ab273b2504782e84d191.png"
@@ -1727,7 +1729,7 @@
 "english":"Outworld Devourer"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Essence Aura</span><br/>After you play a <span style='font-weight:bold;color:#2f7492;'>blue card</span>, there is a 50% chance to restore 2 Mana."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10046.959caac2a5c3a0e8efeec6af631337a483bb8795.png"
@@ -1789,7 +1791,7 @@
 "english":"Phantom Assassin"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Efficient Killer</span><br/>Phantom Assassin deals +4 damage when attacking a hero."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10047.dd94f5bc1b22bef2e9b18264c523d8e28704f728.png"
@@ -1851,7 +1853,7 @@
 "english":"Pugna"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Condemn a random enemy improvement."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Nether Blast</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Condemn a random enemy improvement."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10048.ca73a1b73aa37fc74a7807a69357e2e5641b01df.png"
@@ -1913,7 +1915,7 @@
 "english":"Sniper"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Deal 5 damage to a unit."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Headshot</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 3:</span> Deal 5 damage to a unit."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10050.be0a865d3d49ca386d2a3835cc46eab52a923f47.png"
@@ -2010,7 +2012,7 @@
 "english":"Prellex"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Bringer of the Faithful</span><br/>Summon a <span style='font-weight:bold;color:#ffffff;'>Melee Creep</span> into Prellex's lane each deployment phase."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10053.46d6ca300f26d8e05aaf9d63c590508a723415b5.png"
@@ -2075,7 +2077,7 @@
 "english":"Sven"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Great Cleave</span><br/>Sven has +X Cleave where X is equal to half its Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10054.f7ec19918c68fa805f4577fd31457b5a8a7da2e5.png"
@@ -2137,7 +2139,7 @@
 "english":"Treant Protector"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Branches of Iron</span><br/>Treant Protector's allied neighbors have +2 Armor."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10056.4ea3388b448c9ee13bbbfd7248b46f0c3e71e98a.png"
@@ -2199,7 +2201,7 @@
 "english":"Sorla Khan"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Warmonger</span><br/>Sorla Khan deals +4 damage when attacking a tower."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10058.635583094b11fcc0f86d624e9007f4a519179f38.png"
@@ -2261,7 +2263,7 @@
 "english":"Necrophos"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Sadist</span><br/>Modify Necrophos with +1 Health after an enemy neighbor dies."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10059.66aae3f23e16000eb90086810be1d750ec6babe0.png"
@@ -2323,7 +2325,7 @@
 "english":"Lion"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Deal 8 piercing damage to a unit."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Finger of Death</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 4:</span> Deal 8 piercing damage to a unit."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10060.1b8ab00d3d43fa0aec13c1d4f078c510c2828eed.png"
@@ -2385,7 +2387,7 @@
 "english":"Skywrath Mage"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Give a hero and its allied neighbors -2 Armor this round."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Concussive Shot</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Give a hero and its allied neighbors -2 Armor this round."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10062.320871aec38db2b973d6fa8933e62d3f44e8e407.png"
@@ -2474,7 +2476,7 @@
 "english":"Crystal Maiden"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Arcane Aura</span><br/>After the first time an allied spell is played in each lane, restore 2 Mana to the tower in that lane."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10064.e76bb6f2b597ae16bc8a5efa82eca5ff39afaa29.png"
@@ -2633,7 +2635,7 @@
 "english":"Dark Seer"
 },
 "card_text":{
-"english":"<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move another ally to another lane."
+"english":"<span style='font-weight:bold;color:#ffffff;'>Surge</span><br/><span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move another ally to another lane."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10068.e8e173ac8dd4f1d582fe41378232b4c3637ab039.png"
@@ -2682,6 +2684,7 @@
 "ingame_image":{
 
 },
+"is_crosslane":true,
 "references":[
 
 ]
@@ -2695,7 +2698,7 @@
 "english":"Legion Commander"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Moment of Courage</span><br/>Legion Commander has +2 Retaliate."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10069.f0595417e162f98c02cd6ce7b3a45b5413f6639f.png"
@@ -2758,7 +2761,7 @@
 "english":"Ursa"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Fury Swipes</span><br/>When Ursa deals battle damage to a unit, modify that unit with -1 Armor."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10070.0fb457ff9ef3010b7f2743789889339aa74b4152.png"
@@ -3168,7 +3171,7 @@
 "mana_cost":3,
 "item_def":110086,
 "attack":4,
-"armor":254,
+"armor":-2,
 "hit_points":4,
 "references":[
 
@@ -3715,6 +3718,7 @@
 "ingame_image":{
 
 },
+"illustrator":"Wisnu Tan",
 "rarity":"Common",
 "is_green":true,
 "mana_cost":4,
@@ -4420,6 +4424,7 @@
 "is_black":true,
 "mana_cost":3,
 "item_def":110141,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4447,6 +4452,7 @@
 "illustrator":"Lius Lasahido",
 "is_blue":true,
 "mana_cost":5,
+"is_crosslane":true,
 "references":[
 {
 "card_id":1006,
@@ -4479,6 +4485,7 @@
 "is_blue":true,
 "mana_cost":2,
 "item_def":110148,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4508,6 +4515,7 @@
 "is_green":true,
 "mana_cost":3,
 "item_def":110149,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4537,6 +4545,7 @@
 "is_black":true,
 "mana_cost":3,
 "item_def":110150,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4566,6 +4575,7 @@
 "is_blue":true,
 "mana_cost":3,
 "item_def":110151,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4595,6 +4605,7 @@
 "is_green":true,
 "mana_cost":3,
 "item_def":110152,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4624,6 +4635,7 @@
 "is_red":true,
 "mana_cost":3,
 "item_def":110153,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4653,6 +4665,7 @@
 "is_black":true,
 "mana_cost":4,
 "item_def":110154,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4682,6 +4695,7 @@
 "is_green":true,
 "mana_cost":4,
 "item_def":110155,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4710,7 +4724,9 @@
 "rarity":"Rare",
 "is_black":true,
 "mana_cost":2,
+"charges":3,
 "item_def":110156,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4740,6 +4756,7 @@
 "is_blue":true,
 "mana_cost":5,
 "item_def":110157,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4767,6 +4784,7 @@
 "illustrator":"Randy Vargas",
 "is_blue":true,
 "mana_cost":3,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4796,6 +4814,7 @@
 "is_black":true,
 "mana_cost":1,
 "item_def":110161,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4825,6 +4844,7 @@
 "is_black":true,
 "mana_cost":2,
 "item_def":110162,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10462,
@@ -4865,7 +4885,7 @@
 "english":"Revtel Investments"
 },
 "card_text":{
-"english":"Add a charge to Revtel Investments after the combat phase.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Get 4 gold for each charge. Condemn Revtel Investments."
+"english":"Add a charge to Revtel Investments after the combat phase.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Get 4 gold for each charge. Condemn Revtel Investments."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10164.6167f3647ec77bb58f7f33813b976dbb4603d49e.png"
@@ -4881,6 +4901,7 @@
 "is_black":true,
 "mana_cost":3,
 "item_def":110164,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10463,
@@ -4937,6 +4958,7 @@
 "is_black":true,
 "mana_cost":3,
 "item_def":110165,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4966,6 +4988,7 @@
 "is_green":true,
 "mana_cost":4,
 "item_def":110168,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -4995,6 +5018,7 @@
 "is_green":true,
 "mana_cost":3,
 "item_def":110169,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5024,6 +5048,7 @@
 "is_green":true,
 "mana_cost":4,
 "item_def":110170,
+"is_crosslane":true,
 "references":[
 {
 "card_id":1006,
@@ -5056,6 +5081,7 @@
 "is_blue":true,
 "mana_cost":3,
 "item_def":110171,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5085,6 +5111,7 @@
 "is_red":true,
 "mana_cost":3,
 "item_def":110172,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5112,6 +5139,7 @@
 "illustrator":"Randy Vargas",
 "is_red":true,
 "mana_cost":4,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5141,6 +5169,7 @@
 "is_red":true,
 "mana_cost":1,
 "item_def":110174,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5170,6 +5199,7 @@
 "is_blue":true,
 "mana_cost":4,
 "item_def":110175,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10464,
@@ -5250,6 +5280,7 @@
 "is_black":true,
 "mana_cost":1,
 "item_def":110176,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10465,
@@ -5304,6 +5335,7 @@
 "illustrator":"Tyler Jacobson",
 "is_black":true,
 "mana_cost":3,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5333,6 +5365,7 @@
 "is_red":true,
 "mana_cost":3,
 "item_def":110178,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5360,6 +5393,7 @@
 "illustrator":"Lius Lasahido",
 "is_red":true,
 "mana_cost":4,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5389,6 +5423,7 @@
 "is_blue":true,
 "mana_cost":1,
 "item_def":110180,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10466,
@@ -5445,6 +5480,7 @@
 "is_green":true,
 "mana_cost":5,
 "item_def":110181,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5474,6 +5510,7 @@
 "is_black":true,
 "mana_cost":3,
 "item_def":110182,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5503,6 +5540,7 @@
 "is_red":true,
 "mana_cost":6,
 "item_def":110183,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5532,6 +5570,7 @@
 "is_black":true,
 "mana_cost":4,
 "item_def":110184,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10467,
@@ -5588,6 +5627,7 @@
 "is_black":true,
 "mana_cost":7,
 "item_def":110185,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10468,
@@ -5615,6 +5655,7 @@
 "ingame_image":{
 
 },
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5644,6 +5685,7 @@
 "is_blue":true,
 "mana_cost":6,
 "item_def":110187,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5673,6 +5715,7 @@
 "is_green":true,
 "mana_cost":3,
 "item_def":110192,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5700,6 +5743,7 @@
 "illustrator":"Chris Rallis",
 "is_green":true,
 "mana_cost":5,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5729,6 +5773,7 @@
 "is_blue":true,
 "mana_cost":1,
 "item_def":110194,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5742,7 +5787,7 @@
 "english":"Assassin's Veil"
 },
 "card_text":{
-"english":"Equipped hero has +4 Health.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Choose a combat target for equipped hero."
+"english":"Equipped hero has +4 Health.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Choose a combat target for equipped hero."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10202.291985bec629c14acaecdf928006e962df7c435a.png"
@@ -5798,7 +5843,7 @@
 "english":"Phase Boots"
 },
 "card_text":{
-"english":"Equipped hero has +4 Health.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Swap equipped hero with another ally."
+"english":"Equipped hero has +4 Health.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Swap equipped hero with another ally."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10203.d2a4fa3d2d7e42fd4af22b3f0b622ef53648f728.png"
@@ -5883,7 +5928,7 @@
 "english":"Blink Dagger"
 },
 "card_text":{
-"english":"Equipped hero has +2 Attack.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move equipped hero to another lane."
+"english":"Equipped hero has +2 Attack.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Move equipped hero to another lane."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10206.aea7821beb6e2e965819b3994b032d320b13bac3.png"
@@ -5926,6 +5971,7 @@
 "ingame_image":{
 
 },
+"is_crosslane":true,
 "references":[
 
 ]
@@ -5997,7 +6043,7 @@
 "english":"Demagicking Maul"
 },
 "card_text":{
-"english":"Equipped hero has +2 Attack.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Condemn a random enemy improvement. May only be used if equipped hero is unblocked."
+"english":"Equipped hero has +2 Attack.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Condemn a random enemy improvement. May only be used if equipped hero is unblocked."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10210.8ea1d8a7f8375f7da86c2d377d045a9b668bc1ea.png"
@@ -6227,7 +6273,7 @@
 "english":"Rumusque Vestments"
 },
 "card_text":{
-"english":"Equipped hero has +1 Armor.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Heal a unit 4."
+"english":"Equipped hero has +1 Armor.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Heal a unit 4."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10217.c351e63021caf227d92bff6f0dc2dfde511a8a5d.png"
@@ -6283,7 +6329,7 @@
 "english":"Keenfolk Musket"
 },
 "card_text":{
-"english":"Equipped hero has +2 Attack.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Deal 2 damage to a unit."
+"english":"Equipped hero has +2 Attack.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Deal 2 damage to a unit."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10218.0562cabc3ebcf16a346023cb65696d8b314e6f4c.png"
@@ -6368,7 +6414,7 @@
 "english":"Bracers of Sacrifice"
 },
 "card_text":{
-"english":"Equipped hero has +2 Armor.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Deal 6 damage to equipped hero's enemy neighbors and condemn equipped hero."
+"english":"Equipped hero has +2 Armor.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Deal 6 damage to equipped hero's enemy neighbors and condemn equipped hero."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10222.d11548f662d2d292d19cb52f78182020f3fc0a8b.png"
@@ -6453,7 +6499,7 @@
 "english":"Helm of the Dominator"
 },
 "card_text":{
-"english":"Equipped hero has +3 Armor.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Get control of an enemy creep."
+"english":"Equipped hero has +3 Armor.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Get control of an enemy creep."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10224.5342f086b5d82b9b189a2fe8a87363fd8ac08eb8.png"
@@ -6538,7 +6584,7 @@
 "english":"Wingfall Hammer"
 },
 "card_text":{
-"english":"Equipped hero has +4 Attack.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Give equipped hero and its allied neighbors +X Regeneration this round where X is half its Attack."
+"english":"Equipped hero has +4 Attack.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Give equipped hero and its allied neighbors +X Regeneration this round where X is half its Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10226.d6e408d4954c77ca98be49cb2f2f37f2bea1b61e.png"
@@ -6710,7 +6756,7 @@
 "english":"Book of the Dead"
 },
 "card_text":{
-"english":"Equipped hero has +4 Health. Add a charge to Book of the Dead after an allied <span style='font-weight:bold;color:#ffffff;'>Melee Creep</span> dies.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Zombie</span> for each charge and remove all charges."
+"english":"Equipped hero has +4 Health. Add a charge to Book of the Dead after an allied <span style='font-weight:bold;color:#ffffff;'>Melee Creep</span> dies.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Zombie</span> for each charge and remove all charges."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10235.4547ba37bddb345f94977ea70806b5d8e5b3df5d.png"
@@ -6947,7 +6993,7 @@
 "english":"Shiva's Guard"
 },
 "card_text":{
-"english":"Equipped hero has +2 Armor.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Modify a unit and its allied neighbors with -2 Attack."
+"english":"Equipped hero has +2 Armor.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Modify a unit and its allied neighbors with -2 Attack."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10248.2a80ad64c6f1483eed64309e8f0f9588b100065a.png"
@@ -7148,7 +7194,7 @@
 "english":"Horn of the Alpha"
 },
 "card_text":{
-"english":"Equipped hero has +4 Health.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Thunderhide Pack</span>."
+"english":"Equipped hero has +4 Health.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 2:</span> Summon a <span style='font-weight:bold;color:#ffffff;'>Thunderhide Pack</span>."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10260.f008a86ce8c33d887fd22ece50a3ac0432f18652.png"
@@ -7207,7 +7253,7 @@
 "english":"Nyctasha's Guard"
 },
 "card_text":{
-"english":"Equipped hero has +1 Armor.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Move equipped hero's enemy neighbors to random other lanes."
+"english":"Equipped hero has +1 Armor.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Move equipped hero's enemy neighbors to random other lanes."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10262.7c69c4de1d9da8c6c35373440d051421df3a06aa.png"
@@ -7263,7 +7309,7 @@
 "english":"Apotheosis Blade"
 },
 "card_text":{
-"english":"Equipped hero has +8 Attack and +4 Siege. Condemn each unit equipped hero deals battle damage to.<BR>\n<BR>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Condemn enemy improvements. Condemn each item equipped by the unit blocking equipped hero."
+"english":"Equipped hero has +8 Attack and +4 Siege. Condemn each unit equipped hero deals battle damage to.<BR/>\n<BR/>\n<span style='font-weight:bold;color:#ffffff;'>Active 1:</span> Condemn enemy improvements. Condemn each item equipped by the unit blocking equipped hero."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10263.72384252a5de0a86182aa952059a907880d8eef0.png"
@@ -7507,6 +7553,7 @@
 "is_black":true,
 "mana_cost":1,
 "item_def":110270,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -7534,6 +7581,7 @@
 "illustrator":"Forrest Imel",
 "is_black":true,
 "mana_cost":7,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -7563,6 +7611,7 @@
 "is_black":true,
 "mana_cost":4,
 "item_def":110273,
+"is_quick":true,
 "references":[
 
 ]
@@ -7860,6 +7909,7 @@
 "illustrator":"Daarken",
 "is_red":true,
 "mana_cost":1,
+"is_quick":true,
 "references":[
 
 ]
@@ -7887,6 +7937,8 @@
 "illustrator":"James Paick",
 "is_black":true,
 "mana_cost":5,
+"charges":3,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -8322,7 +8374,7 @@
 "base_card_id":10310,
 "card_type":"Creep",
 "card_name":{
-"english":"Horde Catapult"
+"english":"Oglodi Catapult"
 },
 "card_text":{
 "english":"Deal 2 piercing damage to the enemy tower before the action phase."
@@ -8336,6 +8388,7 @@
 "ingame_image":{
 
 },
+"illustrator":"Mark Winters",
 "rarity":"Uncommon",
 "is_black":true,
 "mana_cost":2,
@@ -8571,6 +8624,7 @@
 "illustrator":"Wisnu Tan",
 "is_black":true,
 "mana_cost":7,
+"is_quick":true,
 "references":[
 
 ]
@@ -8685,6 +8739,7 @@
 "is_green":true,
 "mana_cost":2,
 "item_def":110324,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -8802,6 +8857,7 @@
 "is_black":true,
 "mana_cost":4,
 "item_def":110328,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -8945,6 +9001,7 @@
 "is_blue":true,
 "mana_cost":6,
 "item_def":110335,
+"is_crosslane":true,
 "references":[
 {
 "card_id":1006,
@@ -8977,6 +9034,7 @@
 "is_blue":true,
 "mana_cost":3,
 "item_def":110336,
+"is_crosslane":true,
 "references":[
 {
 "card_id":1006,
@@ -9100,7 +9158,7 @@
 "base_card_id":10342,
 "card_type":"Spell",
 "card_name":{
-"english":"Pick A Fight"
+"english":"Pick a Fight"
 },
 "card_text":{
 "english":"Choose an allied hero. It taunts. Choose a combat target for it."
@@ -9129,7 +9187,7 @@
 "base_card_id":10344,
 "card_type":"Spell",
 "card_name":{
-"english":"Clear The Deck"
+"english":"Clear the Deck"
 },
 "card_text":{
 "english":"Give allied heroes +4 Cleave this round."
@@ -9352,6 +9410,7 @@
 "is_black":true,
 "mana_cost":4,
 "item_def":110354,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -9626,7 +9685,7 @@
 "base_card_id":10370,
 "card_type":"Spell",
 "card_name":{
-"english":"Fight Through The Pain"
+"english":"Fight Through the Pain"
 },
 "card_text":{
 "english":"Give a <span style='font-weight:bold;color:#c2352d;'>red hero</span> +2 Armor this round. <br><br><span style='font-weight:bold;color:#ffffff;'> Get initiative.</span>"
@@ -9645,6 +9704,7 @@
 "is_red":true,
 "mana_cost":1,
 "item_def":110370,
+"is_quick":true,
 "references":[
 
 ]
@@ -9679,35 +9739,36 @@
 ]
 
 },
-{
-"card_id":10374,
-"base_card_id":10374,
-"card_type":"Spell",
-"card_name":{
-"english":"Arcane Assault"
-},
-"card_text":{
-"english":"Deal 2 damage to the enemy tower. Draw a card. <br><br><span style='font-weight:bold;color:#ffffff;'> Get initiative.</span>"
-},
-"mini_image":{
-"def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10374.f129956892b1e01960fec7307094250f4744aaeb.png"
-},
-"large_image":{
-"def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10374_large_english.4bd08846bd99eeb24f81dfc4aaad3c178115922f.png"
-},
-"ingame_image":{
+  {
+    "card_id": 10374,
+    "base_card_id": 10374,
+    "card_type": "Spell",
+    "card_name": {
+      "english": "Arcane Assault"
+    },
+    "card_text": {
+      "english": "Deal 2 damage to the enemy tower. Draw a card. <br><br><span style='font-weight:bold;color:#ffffff;'> Get initiative.</span>"
+    },
+    "mini_image": {
+      "def": "https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10374.f129956892b1e01960fec7307094250f4744aaeb.png"
+    },
+    "large_image": {
+      "def": "https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10374_large_english.4bd08846bd99eeb24f81dfc4aaad3c178115922f.png"
+    },
+    "ingame_image": {
 
-},
-"illustrator":"Alix Branwyn",
-"rarity":"Common",
-"is_blue":true,
-"mana_cost":4,
-"item_def":110374,
-"references":[
+    },
+    "illustrator": "Alix Branwyn",
+    "rarity": "Common",
+    "is_blue": true,
+    "mana_cost": 4,
+    "item_def": 110374,
+    "is_quick": true,
+    "references": [
 
-]
+    ]
 
-},
+  },
 {
 "card_id":10376,
 "base_card_id":10376,
@@ -9964,6 +10025,7 @@
 "is_black":true,
 "mana_cost":1,
 "item_def":110399,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -10051,6 +10113,7 @@
 "is_black":true,
 "mana_cost":7,
 "item_def":110404,
+"is_crosslane":true,
 "references":[
 
 ]
@@ -10252,6 +10315,7 @@
 "is_red":true,
 "mana_cost":7,
 "item_def":110417,
+"is_crosslane":true,
 "references":[
 {
 "card_id":10082,
@@ -10467,7 +10531,7 @@
 "english":"Storm Spirit"
 },
 "card_text":{
-
+"english":"<span style='font-weight:bold;color:#ffffff;'>Overload</span><br/>Give Storm Spirit +2 Attack until end of its next combat phase after you play a <span style='font-weight:bold;color:#736e80;'>black card</span> in any lane."
 },
 "mini_image":{
 "def":"https://steamcdn-a.akamaihd.net/apps/583950/icons/set01/10536.f29d6a820bf65991ea122a1efdb61088651d2706.png"
@@ -10543,6 +10607,7 @@
 "illustrator":"JiHun Lee",
 "is_black":true,
 "mana_cost":3,
+"is_crosslane":true,
 "references":[
 
 ]

@@ -7,6 +7,7 @@ using Discord.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Artifact.Models;
+using System.Linq;
 
 namespace Artifact
 {
@@ -58,8 +59,38 @@ namespace Artifact
             // Hook the MessageReceived Event into our Command Handler
             _client.MessageReceived += HandleCommandAsync;
             _client.MessageReceived += ScanForMentions;
+            _client.ReactionAdded += HandleReaction;
             // Discover all of the commands in this assembly and load them.
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
+        }
+
+        private async Task HandleReaction(Cacheable<IUserMessage, ulong> cache, ISocketMessageChannel channel, SocketReaction reaction)
+        {
+            var candidate = Views.Card.Labels.FirstOrDefault(x => x.Name == reaction.Emote.Name);
+            if (candidate == null)
+            {
+                return;
+            }
+
+            try
+            {
+                var message = await cache.GetOrDownloadAsync();
+                if(message.Author.Id == _client.CurrentUser.Id)
+                {
+
+                    if(message.Reactions[reaction.Emote].ReactionCount != 2)
+                    {
+                        return;
+                    }
+
+                    await Controllers.Card.SendReactionCard.PerformAsync(channel, message, candidate);
+                }
+                
+            } catch (Exception e)
+            {
+                await channel.SendMessageAsync("Error looking up card. Does the bot have needed permission?");
+            }
+            return;
         }
 
         private async Task HandleCommandAsync(SocketMessage messageParam)
