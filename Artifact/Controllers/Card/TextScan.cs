@@ -30,6 +30,9 @@ namespace Artifact.Controllers.Card
                     hits = LoadCards.Instance.cards.Where(x => message.Contains($"[[{replace(regex, x, guild.Language)}]]")).ToList();
                     break;
             }
+
+            if(hits.Any()) Console.WriteLine("processed message!");
+
             await Helpers.SendCards.PerformAsync(context, hits, guild.DisplaySetting, guild.Language);
 
             await DeckLinks.PerformAsync(context, db);

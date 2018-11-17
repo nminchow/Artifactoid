@@ -18,15 +18,14 @@ namespace Artifact.Views.Info
             {
                 case Models.LookupSetting.all:
                     lookupText = "Any card names detected within messages in this server will have the relevant card data posted, ex:\n" +
-                        "`I'm going to try axe.`\n Automatic card name detection is configurable - see: `!d config`";
+                        "`I'm going to try axe.`";
                     break;
                 case Models.LookupSetting.brackets:
                     lookupText = "Any card names surrouneded by `[[` and `]]` will have the relevant card data posted, ex:\n" +
-                        "`I'm going to try [[axe]].`\n Automatic card name detection is configurable - see: `!d config`";
+                        "`I'm going to try [[axe]].`";
                     break;
                 case Models.LookupSetting.none:
-                    lookupText = "To get more info about a card, use the `!c` command show below." +
-                        "Automatic card name detection is configurable - see: `!d config`.";
+                    lookupText = "To get more info about a card, use the `!c` command show below.";
                     break;
             }
 
@@ -38,6 +37,7 @@ namespace Artifact.Views.Info
                 },
                 Description = "Artifactoid shows artifact card data within your discord channels.\n\n" +
                 lookupText +
+                "\n\n Automatic card name detection, display style, and language are configurable - see: `!d config`" +
                 "\n\n Support Server: https://discord.gg/KxNzKFN \n\n" +
                 "**Additional Commands:**",
             };

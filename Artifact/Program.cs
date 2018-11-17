@@ -82,7 +82,7 @@ namespace Artifact
                     {
                         return;
                     }
-
+                    Console.WriteLine("processed reaction!");
                     await Controllers.Card.SendReactionCard.PerformAsync(channel, message, candidate, _services.GetRequiredService<DataBase>());
                 }
                 
