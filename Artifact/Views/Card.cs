@@ -89,6 +89,8 @@ namespace Artifact.Views
                 description += $"\n\n**{labels.Dequeue()}[{x.card_name.InLanguage(language)}]({GenerateLink(x, linkType)})**: {x.card_text.InLanguage(language)}";
             }
 
+            description = Regex.Replace(description, "<br/>", "\n");
+
             var embed = new EmbedBuilder
             {
                 Author = new EmbedAuthorBuilder
