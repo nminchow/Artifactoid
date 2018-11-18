@@ -19,9 +19,9 @@ namespace Artifact.Controllers.Card
             if (message.Contains(prefix) && !message.Contains("http"))
             {
                 // first word that ends after prefix
-                var candidateWord = message.Substring(message.IndexOf(prefix)).Split(' ')[0];
+                var candidate = message.Substring(message.IndexOf(prefix)).Split(' ')[0];
                 // everything before the last underscore
-                var candidate = candidateWord.Substring(0, candidateWord.LastIndexOf('_') + 1);
+                //var candidate = candidateWord.Substring(0, candidateWord.LastIndexOf('_') + 1);
                 // todo: figure out the actual params on this
                 if (candidate.Length > 50 && candidate.Length < 100)
                 {
