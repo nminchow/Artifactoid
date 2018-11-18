@@ -31,9 +31,11 @@ namespace Artifact.Controllers.Card
                     break;
             }
 
+            hits = hits.Where(x => x.card_type != "Ability").ToList();
+
             if(hits.Any()) Console.WriteLine("processed message!");
 
-            await Helpers.SendCards.PerformAsync(context, hits, guild.DisplaySetting, guild.Language);
+            await Helpers.SendCards.PerformAsync(context.Channel, hits, guild.DisplaySetting, guild.Language);
 
             await DeckLinks.PerformAsync(context, db);
 

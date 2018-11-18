@@ -9,12 +9,12 @@ namespace Artifact.Controllers.Card.Helpers
 {
     class SendCards
     {
-        public static async Task PerformAsync(SocketCommandContext context, IEnumerable<Models.Card> cards, Models.DisplaySettings display, Models.Languages language)
+        public static async Task PerformAsync(Discord.WebSocket.ISocketMessageChannel channel, IEnumerable<Models.Card> cards, Models.DisplaySettings display, Models.Languages language)
         {
             var cardViews = cards.Select(x => Views.Card.Response(x, display, language));
 
             var messages = cardViews.Select(x =>
-                SendCardAndReactions(x.Item2, x.Item1, context)
+                SendCardAndReactions(x.Item2, x.Item1, channel)
             );
 
             await Task.WhenAll(messages);
@@ -22,11 +22,12 @@ namespace Artifact.Controllers.Card.Helpers
             return;
         }
 
-        public static async Task SendCardAndReactions(List<Discord.Emoji> reactions, Discord.Embed embed, SocketCommandContext context)
+        public static async Task SendCardAndReactions(List<Discord.Emoji> reactions, Discord.Embed embed, Discord.WebSocket.ISocketMessageChannel channel)
         {
-            var message = await context.Channel.SendMessageAsync("", embed: embed);
-            var reacionResults = reactions.Select(x =>
-                message.AddReactionAsync(x)
+            var message = await channel.SendMessageAsync("", embed: embed);
+            // loop itself is async so we get them in the right order
+            var reacionResults = reactions.Select(async x =>
+                await message.AddReactionAsync(x)
             );
             await Task.WhenAll(reacionResults);
             return;

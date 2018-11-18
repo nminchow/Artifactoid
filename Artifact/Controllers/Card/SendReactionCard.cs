@@ -20,15 +20,17 @@ namespace Artifact.Controllers.Card
 
             var author = message.Embeds.First().Author.Value;
 
+            // There is a bug here in that some cards have the same name. This 
+            // can lead to weird behavior where you are adding a reaction, but
+            // actually getting the reaction of a different card. See "Horn of
+            // the Alpha"
             var card = ByName.CardsByName(author.Name, guild.Language).First();
 
             var cards = Views.Card.GetAssociatedCards(card);
 
             var childCard = cards[Views.Card.Labels.IndexOf(candidate)];
 
-            var view = Views.Card.Response(childCard, guild.DisplaySetting, guild.Language);
-
-            await channel .SendMessageAsync("", embed: view.Item1);
+            await Helpers.SendCards.PerformAsync(channel, new Models.Card[] { childCard.Item1 }, guild.DisplaySetting, guild.Language);
         }
     }
 }

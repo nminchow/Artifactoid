@@ -40,8 +40,8 @@ namespace Artifact.Views
         {
             new Emoji("🔹"),
             new Emoji("🔸"),
-            new Emoji("▫️"),
-            new Emoji("▪️")
+            new Emoji("▫"),
+            new Emoji("▪")
         };
 
         public static Tuple<Embed, List<Emoji>> Response(Models.Card card, DisplaySettings display, Languages language, LinkTypes linkType = LinkTypes.articraft)
@@ -78,15 +78,18 @@ namespace Artifact.Views
                 description = $"{supplemental_card.card_name.InLanguage(language)}\n{supplemental_card.card_text.InLanguage(language)}";
             }
 
-            description = description ?? "-";
-            List<Models.Card> associatedCards = GetAssociatedCards(card);
+            description = string.IsNullOrWhiteSpace(description) ? "-" : $"{description}\n";
+            List<Tuple<Models.Card, string>> associatedCards = GetAssociatedCards(card);
 
             var labels = new Queue<Emoji>(Labels);
             var usedLabels = new List<Emoji>();
-            foreach (Models.Card x in associatedCards)
+            foreach (Tuple<Models.Card, string> x in associatedCards)
             {
                 usedLabels.Add(labels.Peek());
-                description += $"\n\n**{labels.Dequeue()}[{x.card_name.InLanguage(language)}]({GenerateLink(x, linkType)})**: {x.card_text.InLanguage(language)}";
+                var refCard = x.Item1;
+                var preText = x.Item2 == "includes" ? "Includes " : "";
+                var refDescription = GetRefDescription(x, language);
+                description += $"\n**{labels.Dequeue()}{preText}[{refCard.card_name.InLanguage(language)}]({GenerateLink(refCard, linkType)})**{refDescription}";
             }
 
             description = Regex.Replace(description, "<br/>", "\n");
@@ -141,11 +144,25 @@ namespace Artifact.Views
             return new Tuple<Embed, List<Emoji>>(embed, usedLabels);
         }
 
-        public static List<Models.Card> GetAssociatedCards(Models.Card card)
+        public static List<Tuple<Models.Card, string>> GetAssociatedCards(Models.Card card)
         {
-            return card.references.Where(x => x.ref_type == "includes").Select(x =>
-                            Controllers.Card.Helpers.FindById.Perform(x.card_id)
-                        ).ToList();
+            var matches = new[] { "includes", "references", "active_ability", "passive_ability" };
+            return card.references.Where(x =>
+                matches.Contains(x.ref_type)
+            ).Select(x => 
+                new Tuple<Models.Card, string>(Controllers.Card.Helpers.FindById.Perform(x.card_id), x.ref_type)
+            ).ToList();
+        }
+
+        public static string GetRefDescription(Tuple<Models.Card, string> referece, Languages language)
+        {
+            var refCard = referece.Item1;
+            if (referece.Item2 == "active_ability" || referece.Item2 == "passive_ability")
+                return "";
+
+            var refText = refCard.card_text.InLanguage(language).Contains("\n") ? $"\n{refCard.card_text.InLanguage(language)}" : refCard.card_text.InLanguage(language);
+            return $": {refText}";
+
         }
     }
 }
