@@ -160,8 +160,12 @@ namespace Artifact.Views
             if (referece.Item2 == "active_ability" || referece.Item2 == "passive_ability")
                 return "";
 
-            var refText = refCard.card_text.InLanguage(language).Contains("\n") ? $"\n{refCard.card_text.InLanguage(language)}" : refCard.card_text.InLanguage(language);
-            return $": {refText}";
+            var cardText = refCard.card_text.InLanguage(language);
+
+            if (String.IsNullOrEmpty(cardText)) return "";
+
+            cardText = cardText.Contains("\n") ? $"\n{cardText}" : cardText;
+            return $": {cardText}";
 
         }
     }
