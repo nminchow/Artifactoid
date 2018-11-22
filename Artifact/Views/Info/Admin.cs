@@ -27,6 +27,7 @@ namespace Artifact.Views.Info
 
             embed.AddField("!a config match {type}", "Toggle the bot's automatic card name detection between three types:\n" +
                 "**brackets** - Look for card names between brackets: `I'm going to try [[axe]].`\n" +
+                "**singleBracket** - Look for card names between single bracket: `I'm going to try [axe].`\n" +
                 "**all** - Look for card names everywhere in messages: `I'm going to try axe.`\n" +
                 "**none** - Disable automatic card name matching."
                 );

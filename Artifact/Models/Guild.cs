@@ -5,7 +5,7 @@ using System.Text;
 namespace Artifact.Models
 {
 
-    public enum LookupSetting { all, brackets, none }
+    public enum LookupSetting { all, brackets, none, singleBracket }
     public enum DisplaySettings { full, link, image, mini }
     public enum LinkTypes { artifactFire,  articraft}
     public enum Languages

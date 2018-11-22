@@ -29,6 +29,10 @@ namespace Artifact.Controllers.Card
                     // this could be cleaner with some substring logic
                     hits = LoadCards.Instance.cards.Where(x => message.Contains($"[[{replace(regex, x, guild.Language)}]]")).ToList();
                     break;
+                case LookupSetting.singleBracket:
+                    hits = LoadCards.Instance.cards.Where(x => message.Contains($"[{replace(regex, x, guild.Language)}]")).ToList();
+                    break;
+
             }
 
             hits = hits.Where(x => x.card_type != "Ability").ToList();
