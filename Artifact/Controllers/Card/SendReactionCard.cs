@@ -24,7 +24,12 @@ namespace Artifact.Controllers.Card
             // can lead to weird behavior where you are adding a reaction, but
             // actually getting the reaction of a different card. See "Horn of
             // the Alpha"
-            var card = ByName.CardsByName(author.Name, guild.Language).First();
+
+            var description = message.Embeds.First().Fields.Last().Value;
+
+            var id = Convert.ToInt32(description.Substring(description.IndexOf('#')+1).Split("\n")[0]);
+
+            var card = Helpers.FindById.Perform(id);
 
             var cards = Views.Card.GetAssociatedCards(card);
 

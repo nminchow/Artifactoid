@@ -118,6 +118,8 @@ namespace Artifact.Views
 
             var lastField = card.rarity ?? "No Rarity";
 
+            lastField += $" - #{card.card_id}";
+
             if (new[] { Models.DisplaySettings.full, Models.DisplaySettings.link }.Contains(display))
             {
                 lastField += $"\n[{LinkName(linkType)}]({webLink})";
