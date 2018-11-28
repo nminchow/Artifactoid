@@ -18,8 +18,8 @@ namespace Artifact.Views
             {
                 case LinkTypes.artifactFire:
                     return $"https://www.artifactfire.com/artifact/cards/{str.Replace(' ', '-')}";
-                case LinkTypes.articraft:
-                    return $"https://articraft.io/cards/view/{str.Replace(" ", "")}";
+                case LinkTypes.drawTwo:
+                    return $"https://drawtwo.gg/cards/view/{str.Replace(" ", "")}";
             }
             return "https://playartifact.com/";
         }
@@ -30,8 +30,8 @@ namespace Artifact.Views
             {
                 case LinkTypes.artifactFire:
                     return "ArtifactFire";
-                case LinkTypes.articraft:
-                    return "ARTICRAFT";
+                case LinkTypes.drawTwo:
+                    return "DrawTwo";
             }
             return "";
         }
@@ -44,7 +44,7 @@ namespace Artifact.Views
             new Emoji("▪")
         };
 
-        public static Tuple<Embed, List<Emoji>> Response(Models.Card card, DisplaySettings display, Languages language, LinkTypes linkType = LinkTypes.articraft)
+        public static Tuple<Embed, List<Emoji>> Response(Models.Card card, DisplaySettings display, Languages language, LinkTypes linkType = LinkTypes.drawTwo)
         {
 
             // Color (default black)

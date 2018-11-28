@@ -20,11 +20,6 @@ namespace Artifact.Controllers.Card
 
             var author = message.Embeds.First().Author.Value;
 
-            // There is a bug here in that some cards have the same name. This 
-            // can lead to weird behavior where you are adding a reaction, but
-            // actually getting the reaction of a different card. See "Horn of
-            // the Alpha"
-
             var description = message.Embeds.First().Fields.Last().Value;
 
             var id = Convert.ToInt32(description.Substring(description.IndexOf('#')+1).Split("\n")[0]);
